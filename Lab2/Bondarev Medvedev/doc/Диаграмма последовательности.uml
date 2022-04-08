@@ -8,8 +8,6 @@ PC -> CameraSystem : answerCameraSystem()
 CameraSystem -> Robot: turn left()
 CameraSystem -> Robot: turn right()—
 CameraSystem -> Robot: Move forward()
-CameraSystem -> Robot: Clean the floor()
-CameraSystem -> Robot: Clean the wall()
 CameraSystem -> Robot: Paint over the graffiti on the wall()
 CameraSystem -> Robot: Paint over the graffiti on the floor()
 CameraSystem -> Robot: Return on his place()
