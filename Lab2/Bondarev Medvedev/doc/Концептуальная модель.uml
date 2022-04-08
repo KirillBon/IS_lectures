@@ -1,11 +1,11 @@
 @startuml
-Robot : charge() 
-Robot : stock paint
-PC : condition
 graffiti : position
-PC - Robot : reciving comand >
+PC - CameraSystem :answer >
+CameraSystem - PC :call >
+CameraSystem - Robot : cordinates >
 Robot - Floor : Clean >
 Robot - Wall : Clean >
 graffiti -- Wall : >
 graffiti -- Floor : >
+CameraSystem - graffiti: detected >
 @enduml
