@@ -9,9 +9,10 @@ Paint over the graffiti on the wall()
 Paint over the graffiti on the floor()
 Return on his place()
 }
-Class PC{
+Class CameraSystem{
 detectgraffiti()
-Reciving a comand() 
+CallPC()
+Reciving a coordinates() 
 }
-PC o-- Robot: has
+CameraSystem o-- Robot: has
 @enduml
