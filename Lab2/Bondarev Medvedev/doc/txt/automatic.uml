@@ -1,0 +1,15 @@
+@startuml
+[*] --> getting_coordinates : detected_graffiti()
+getting_coordinates --> getting_coordinated : move()
+getting_coordinated --> move_forward : move()
+getting_coordinated --> turn : turnLeft()
+getting_coordinated --> turn : turnRight()
+turn --> move_forward : move()
+move_forward --> turn : turnLeft()
+move_forward --> turn : turnRight()
+move_forward --> paint_floor : paint_floor()
+move_forward --> paint_wall : paint_wall()
+paint_floor --> Return_Place : return_on_his_place()
+paint_wall --> Return_Place : return_on_his_place()
+Return_Place --> getting_coordinates : ReturnPlace()
+@enduml
