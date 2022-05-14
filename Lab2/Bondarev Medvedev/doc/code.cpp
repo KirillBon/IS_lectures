@@ -3,8 +3,6 @@ using namespace std;
 
 enum class Event
 {
-	PUSH_ON,
-	PUSH_OFF,
 	GETTINGCOORDINATES,
 	Move,
 	Turn_Right,
@@ -17,8 +15,6 @@ enum class Event
 
 enum class States
 {
-	ON,
-	OFF,
 	GETTINGCOORDINATED,
 	MoveForward,
 	TurnRight,
@@ -62,29 +58,11 @@ public:
 			getting_coordinated();
 			state = States::GETTINGCOORDINATED;
 			break; 
-		case Event::PUSH_OFF:
-			off();
-			state = States::OFF;
-			break;
-		case Event::PUSH_ON:
-			on();
-			state = States::ON;
-			break;
 		case Event::Return_Place:
 			return_on_his_place();
 			state = States::ReturnPlace;
 			break;
 		}
-	}
-
-	void on() 
-	{
-		state = States::ON;
-	}
-
-	void off() 
-	{
-		state = States::OFF;
 	}
 
 	void getting_coordinated() 
@@ -97,7 +75,7 @@ public:
 		state = States::MoveForward;
 	}
 
-
+	void turnLeft()
 	{
 		state = States::TurnLeft;
 	}
@@ -158,7 +136,7 @@ class InternetCommand : public StrategyCommand
 public:
 	Event getEvent()
 	{
-		return Event::PUSH_OFF;
+		return Event::Return_Place;
 	}
 };
 
@@ -190,12 +168,6 @@ public:
 
 	        case 'g':
 		        return Event::GETTINGCOORDINATES;
-
-	        case '0':
-		        return Event::PUSH_OFF;
-
-	        case '1':
-		        return Event::PUSH_ON;
 
 	        case 't':
 		        return Event::Return_Place;
